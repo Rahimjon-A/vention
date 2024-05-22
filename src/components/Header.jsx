@@ -1,15 +1,17 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { Logo } from "../assets/Logo";
 import { IoChevronDownOutline } from "react-icons/io5";
 import { GoGlobe } from "react-icons/go";
 import { GoArrowRight } from "react-icons/go";
 import DropDown1 from "./DropDown1";
 import DropDown2 from "./DropDown2";
+import { ModeContext } from "../context/Theme";
 
 const Header = () => {
     const [mouse, setMouse] = useState(false);
     const [about, setAbout] = useState(false);
     const [globe, setGlobe] = useState(false);
+    const { theme } = useContext(ModeContext);
 
     const hendleGlobeEnter = () => {
         setGlobe(true);
@@ -34,13 +36,13 @@ const Header = () => {
 
     return (
         <div className="relative">
-            <nav className="flex container bg-white relative mx-auto pl-[30px]  z-20 justify-between items-center border-b ">
+            <nav className={`flex container ${ theme ? "bg-[#29292b] text-white " : "bg-white" } relative mx-auto pl-[30px]  z-20 justify-between items-center border-b `}>
                 <div>
                     <img className="w-[120px] " src={Logo} alt="logo" />
                 </div>
 
                 <div className="flex items-center border-l ">
-                    <ul className="flex items-center gap-[115px] ">
+                    <ul className={`  flex items-center gap-[115px] `}>
                         <li
                             onMouseEnter={hendleMouseEnter}
                             onMouseLeave={hendleMouseLeave}
@@ -49,9 +51,9 @@ const Header = () => {
                             <span
                                 className={` ${
                                     mouse ? "block" : "hidden"
-                                } transition-all w-[110%] h-[3px] left-0 absolute bottom-[-2px] bg-black`}
+                                } transition-all w-[110%] h-[3px] left-0 absolute bottom-[-2px] ${ theme ? " bg-[#ff6a47] " : "bg-black"} `}
                             ></span>
-                            <span className="hover:text-[#52002d] transition-all">
+                            <span className={` ${ theme ? "hover:text-[#ff6a47]" : "hover:text-[#52002d]" } transition-all`}>
                                 What we do
                             </span>{" "}
                             <IoChevronDownOutline
@@ -60,10 +62,10 @@ const Header = () => {
                                 } transition-all `}
                             ></IoChevronDownOutline>
                         </li>
-                        <li className=" cursor-pointer transition-all hover:text-[#52002d] text-[18px] py-4 ">
+                        <li className={` cursor-pointer transition-all ${ theme ? "hover:text-[#ff6a47]" : "hover:text-[#52002d]" } text-[18px] py-4 `}>
                             Portfolio
                         </li>
-                        <li className=" cursor-pointer transition-all hover:text-[#52002d] text-[18px] py-4 ">
+                        <li className={` cursor-pointer transition-all ${ theme ? "hover:text-[#ff6a47]" : "hover:text-[#52002d]" } text-[18px] py-4 `}>
                             Insights
                         </li>
                         <li
@@ -74,9 +76,9 @@ const Header = () => {
                             <span
                                 className={` block w-[100%] h-[3px]  ${
                                     about ? "block" : "hidden"
-                                } left-0 absolute bottom-[-2px] bg-black`}
+                                } left-0 absolute bottom-[-2px] ${ theme ? "bg-[#ff6a47]" : "bg-black" }`}
                             ></span>
-                            <span className="hover:text-[#52002d] transition-all">
+                            <span className={`${ theme ? "hover:text-[#ff6a47]" : "hover:text-[#52002d]" } transition-all`}>
                                 About us
                             </span>{" "}
                             <IoChevronDownOutline
@@ -105,19 +107,19 @@ const Header = () => {
                 onMouseLeave={hendleGlobeLeave}
                 className={` ${
                     globe ? "bottom-[-135px]" : " bottom-[0px] "
-                } absolute bg-white z-0 w-[200px] dropDown  flex flex-col gap-3 right-0 border pr-[30px] pl-2 py-[20px]`}
+                } absolute ${ theme ? "bg-[#29292b]" : "bg-white" } z-0 w-[200px] dropDown  flex flex-col gap-3 right-0 border pr-[30px] pl-2 py-[20px]`}
             >
                 <div className="flex cursor-pointer items-center gap-2">
                     <GoArrowRight />
-                    <p className="hover:text-[#52002d] font-medium transition-all " >US & Worldwide</p>
+                    <p className={`hover:text-[#52002d] font-medium transition-all ${ theme ? "hover:text-[#ff6a47]" : "hover:text-[#52002d]" } `} >US & Worldwide</p>
                 </div>
                 <div className="flex cursor-pointer items-center gap-2">
                     <GoArrowRight />
-                    <p className="hover:text-[#52002d] font-medium transition-all ">UK</p>
+                    <p className={`hover:text-[#52002d] font-medium transition-all ${ theme ? "hover:text-[#ff6a47]" : "hover:text-[#52002d]" } `}>UK</p>
                 </div>
                 <div className="flex cursor-pointer items-center gap-2">
                     <GoArrowRight />
-                    <p className="hover:text-[#52002d] font-medium transition-all ">Dach</p>
+                    <p className={`hover:text-[#52002d] font-medium transition-all ${ theme ? "hover:text-[#ff6a47]" : "hover:text-[#52002d]" } `}>Dach</p>
                 </div>
             </div>
 

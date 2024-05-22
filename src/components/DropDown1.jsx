@@ -1,6 +1,8 @@
-import React from "react";
+import React, { useContext } from "react";
+import { ModeContext } from "../context/Theme";
 
 const DropDown1 = ({ hendleMouseEnter, hendleMouseLeave, mouse }) => {
+    const { theme } = useContext(ModeContext);
     return (
         <div
             className={` container w-full  backdrop-filter backdrop-blur-[5px] flex z-10 justify-end h-[95vh] dropDown  absolute top-14  ${
@@ -10,10 +12,10 @@ const DropDown1 = ({ hendleMouseEnter, hendleMouseLeave, mouse }) => {
             <div
                 onMouseEnter={hendleMouseEnter}
                 onMouseLeave={hendleMouseLeave}
-                className={` bg-white  h-full dropDown  absolute border-l z-10 `}
+                className={`${ theme ? "bg-[#29292b]  " : " bg-white " }  h-full dropDown  absolute border-l z-10 `}
             >
                 <div className="grid grid-cols-3 gap-[40px] pr-[100px] border-b pl-[30px] py-[20px] ">
-                    <p className=" text-[20px] text-[#52002d] font-medium ">
+                    <p className={` text-[20px] ${ theme ? "text-[#ff6a47] " : "text-[#52002d]" } font-medium `}>
                         Services
                     </p>
                     <div className="flex flex-col gap-3">
@@ -35,7 +37,7 @@ const DropDown1 = ({ hendleMouseEnter, hendleMouseLeave, mouse }) => {
                 </div>
 
                 <div className="grid grid-cols-3 gap-[40px] pr-[100px] border-b pl-[30px] py-[20px] ">
-                    <p className=" text-[20px] text-[#52002d] font-medium ">
+                    <p className={` text-[20px] ${ theme ? "text-[#ff6a47] " : "text-[#52002d]" } font-medium `}>
                         Idustries
                     </p>
                     <div className="flex flex-col gap-3">
@@ -57,18 +59,17 @@ const DropDown1 = ({ hendleMouseEnter, hendleMouseLeave, mouse }) => {
                             Realt Estate
                         </p>
                         <p className=" cursor-pointer text-[22px] underline ">
-                            {" "}
                             Ecommerce
                         </p>
                         <p className=" cursor-pointer text-[22px] underline ">
-                            {" "}
+
                             Marketing / adtech
                         </p>
                     </div>
                 </div>
 
                 <div className="grid grid-cols-3 gap-[40px] pr-[100px] border-b pl-[30px] py-[20px] ">
-                    <p className=" text-[20px] text-[#52002d] font-medium ">
+                    <p className={` text-[20px] ${ theme ? "text-[#ff6a47] " : "text-[#52002d]" } font-medium `}>
                         Expertise
                     </p>
                     <div className="flex flex-col gap-3">

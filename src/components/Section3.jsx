@@ -17,7 +17,7 @@ const Section3 = () => {
                     onMouseEnter={() => setStaff(1)}
                     className={`border-r pt-[30px] ${
                         staff == 1 ? "block max-w-[700px] " : null
-                    } pr-[40px] dropDown `}
+                    } pr-[40px] dropDown ease-out duration-500 transition-all `}
                 >
                     <p className="text-[26px] font-semibold mb-[50px] ">
                         01 Discovery
@@ -25,7 +25,7 @@ const Section3 = () => {
                     <p
                         className={` ${
                             staff == 1 ? "block " : "hidden"
-                        } text-[26px] font-semibold `}
+                        } text-[26px] font-semibold ease-out duration-500 transition-all `}
                     >
                         We start with your vision: What do you want to build?
                         How can we accelerate your company’s growth to outpace
@@ -37,7 +37,7 @@ const Section3 = () => {
                     onMouseEnter={() => setStaff(2)}
                     className={`border-r pt-[30px] ${
                         staff == 2 ? "block max-w-[700px] " : null
-                    } pr-[40px] dropDown `}
+                    } pr-[40px] dropDown ease-out duration-500 transition-all `}
                 >
                     <p className="text-[26px] font-semibold mb-[50px] ">
                         02 Staffing
@@ -45,7 +45,7 @@ const Section3 = () => {
                     <p
                         className={` ${
                             staff == 2 ? "block " : "hidden"
-                        } text-[26px] font-semibold `}
+                        } text-[26px] font-semiboldease-out duration-500 transition-all  `}
                     >
                         Next, we work with you to strategically assemble a team
                         with the precise skills needed to deliver on that vision
@@ -58,7 +58,7 @@ const Section3 = () => {
                     onMouseEnter={() => setStaff(3)}
                     className={`border-r pt-[30px] ${
                         staff == 3 ? "block max-w-[700px] " : null
-                    } pr-[40px] dropDown `}
+                    } pr-[40px] dropDown ease-out duration-500 transition-all `}
                 >
                     <p className="text-[26px] font-semibold mb-[50px] ">
                         03 Kickoff
@@ -66,7 +66,7 @@ const Section3 = () => {
                     <p
                         className={` ${
                             staff == 3 ? "block " : "hidden"
-                        } text-[26px] font-semibold `}
+                        } text-[26px] font-semibold ease-out duration-500 transition-all `}
                     >
                         In as little as two weeks, your remote team is ready to
                         onboard and hit the ground running
@@ -77,7 +77,7 @@ const Section3 = () => {
                     onMouseEnter={() => setStaff(4)}
                     className={` pt-[30px] ${
                         staff == 4 ? "block max-w-[700px] " : null
-                    } pr-[40px] dropDown `}
+                    } pr-[40px] dropDown ease-out duration-500 transition-all `}
                 >
                     <p className="text-[26px] font-semibold mb-[50px] ">
                         04 Ramp up
@@ -85,7 +85,7 @@ const Section3 = () => {
                     <p
                         className={` ${
                             staff == 4 ? "block " : "hidden"
-                        } text-[26px] font-semibold dropDown `}
+                        } text-[26px] font-semibold dropDown ease-out duration-500 transition-all `}
                     >
                         Ready to scale up or ramp down the team? Our flexible
                         model was designed to grow alongside you, for as long as

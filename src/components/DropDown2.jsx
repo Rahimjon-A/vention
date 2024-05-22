@@ -1,6 +1,8 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { ModeContext } from '../context/Theme';
 
 const DropDown2 = ({hendleEnterAbout, hendleLeaveAbout, about}) => {
+    const { theme } = useContext(ModeContext);
   return (
     <div className={` container w-full  backdrop-filter backdrop-blur-[5px] flex justify-end h-[95vh] z-10 dropDown  absolute top-14  ${
         about ? " top-14 " : "top-[-95vh]"
@@ -8,12 +10,12 @@ const DropDown2 = ({hendleEnterAbout, hendleLeaveAbout, about}) => {
 <div
     onMouseEnter={hendleEnterAbout}
     onMouseLeave={hendleLeaveAbout}
-    className={` bg-white  h-full dropDown  absolute border-l z-10 `}
+    className={` ${ theme ? "bg-[#29292b] " : "bg-white" }  h-full dropDown  absolute border-l z-10 `}
 >
    
    <div className='max-w-[1034px] ' >
    <div className="grid grid-cols-3 gap-[40px] pr-[40px] border-b pl-[30px] py-[20px] " >
-        <p className=" text-[20px] text-[#52002d] font-medium " >Company</p>
+        <p className={` text-[20px] ${ theme ? "text-[#ff6a47] " : "text-[#52002d]" } font-medium `} >Company</p>
         <div className="flex flex-col gap-3" >
             <p className=" cursor-pointer text-[22px] underline " >Who we are</p>
             <p className="text-[18px] mb-[40px] " >Impact on clients, communities, and our people</p>
@@ -29,7 +31,7 @@ const DropDown2 = ({hendleEnterAbout, hendleLeaveAbout, about}) => {
     </div>
 
     <div className="grid grid-cols-3 gap-[40px] pr-[40px] border-b pl-[30px] py-[20px] " >
-        <p className=" text-[20px] text-[#52002d] font-medium " >Delivery models </p>
+        <p className={` text-[20px] ${ theme ? "text-[#ff6a47] " : "text-[#52002d]" } font-medium `} >Delivery models </p>
         <div className="flex flex-col gap-3" >
             <p className=" cursor-pointer text-[22px] underline " >IT staff augmentation</p>
             <p className=" cursor-pointer text-[22px] underline " >Dedicated development teams</p>
@@ -41,8 +43,8 @@ const DropDown2 = ({hendleEnterAbout, hendleLeaveAbout, about}) => {
         </div>
     </div>
 
-    <div className="grid grid-cols-3 gap-[40px] pr-[40px] border-b pl-[30px] py-[20px] " >
-        <p className=" text-[20px] text-[#52002d] font-medium " >Discover more</p>
+    <div className="grid grid-cols-3 gap-[40px] pr-[40px]  pl-[30px] py-[20px] " >
+        <p className={` text-[20px] ${ theme ? "text-[#ff6a47] " : "text-[#52002d]" } font-medium `} >Discover more</p>
         <div className="flex flex-col gap-3" >
             <p className=" cursor-pointer text-[22px] underline " >Newsroom</p>
         </div>

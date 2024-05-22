@@ -1,10 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { PiArrowUpRight } from "react-icons/pi";
 import Image1 from "../assets/image1.jpg";
 import Image2 from "../assets/image2.jpg";
 import Image3 from "../assets/image3.jpg";
 import Image4 from "../assets/image4.jpg";
 import Carousel from "./Carousel";
+import { ModeContext } from "../context/Theme";
 
 const Hero = () => {
     const [slide, setSlide] = useState(1);
@@ -14,6 +15,7 @@ const Hero = () => {
         3: "AI innovation",
         4: "Expert software development",
     };
+    const { theme } = useContext(ModeContext)
 
     const slideBtn = {
         1: "Get an setimate",
@@ -130,7 +132,7 @@ const Hero = () => {
                         ))}
                     </Carousel>
 
-                    <div className="w-[450px] h-[200px] skew-x-[-45deg] bg-white bottom-0 right-[-100px]  absolute" > </div>
+                    <div className={`w-[450px] h-[180px] skew-x-[-45deg] ${ theme ? "bg-[#29292b]" : "bg-white" } bottom-[20px] right-[-100px]  absolute`} > </div>
                 </div>
             </div>
         </div>

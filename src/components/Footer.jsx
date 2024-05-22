@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { RiUploadLine } from "react-icons/ri";
+import { ModeContext } from '../context/Theme';
 
 const Footer = () => {
+    const { theme } = useContext(ModeContext)
   return (
     <div className='border-l' >
         
@@ -10,11 +12,11 @@ const Footer = () => {
                         <p className='border-b pl-[40px] text-[45px] pt-[150px] font-bold pb-[40px] ' >Contact</p>
 
                         <div className='grid grid-cols-2' >
-                            <input className='border outline-none py-4 px-[40px] text-[#b4b4b5] ' placeholder='Full Name' type="text" />
-                            <input className='border outline-none py-4 px-[40px] text-[#b4b4b5] ' placeholder='Work Email' type="text" />
-                            <input className='border outline-none py-4 px-[40px] text-[#b4b4b5] ' placeholder='Phone (Optional)' type="text" />
+                            <input className={`border outline-none py-4 px-[40px] text-[#b4b4b5]  ${ theme ? " bg-[#29292b] " : " bg-white "  }  `} placeholder='Full Name' type="text" />
+                            <input className={`border outline-none py-4 px-[40px] text-[#b4b4b5]  ${ theme ? " bg-[#29292b] " : " bg-white "  }  `} placeholder='Work Email' type="text" />
+                            <input className={`border outline-none py-4 px-[40px] text-[#b4b4b5]  ${ theme ? " bg-[#29292b] " : " bg-white "  }  `} placeholder='Phone (Optional)' type="text" />
                             <span className='px-[40px] py-4 border flex items-center justify-between' >
-                            <input className='outline-none text-[#b4b4b5] w-[80%] ' placeholder='Upload File (max file size is 30MB) ' type="text" />
+                            <input className='outline-none text-[#b4b4b5] w-[80%]  bg-transparent ' placeholder='Upload File (max file size is 30MB) ' type="text" />
                             <RiUploadLine className=' text-[#b4b4b5] text-[28xpx] '></RiUploadLine>
 
                             </span>
@@ -26,7 +28,7 @@ const Footer = () => {
             </div>
 
             <div className='grid grid-cols-[8fr_3fr] border-b' >
-                <textarea className=' outline-none resize-none px-[40px] py-[30px] text-[#b4b4b5]  ' placeholder='How can we help you? ' ></textarea>
+                <textarea className={` outline-none resize-none px-[40px] py-[30px] text-[#b4b4b5] ${ theme ? " bg-[#29292b] " : " bg-white "  } `} placeholder='How can we help you? ' ></textarea>
                 <button className=' hover:bg-[#101c57] transition-all bg-[#3155ff] text-white text-[22px] font-medium ' >Send</button>
             </div>
 

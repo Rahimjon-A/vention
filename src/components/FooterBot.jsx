@@ -1,20 +1,29 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Logo } from "../assets/Logo";
+import { ModeContext } from '../context/Theme';
+import Toggle from './Toggle';
 
 
 const FooterBot = () => {
+    const { theme } = useContext(ModeContext)
   return (
-    <div className='border-l' >
-        <div className='grid grid-cols-[7fr_3fr] pl-[40px] border-b ' >
-            <div className='border-r pt-[40px] ' >
+    <div className={` border-l ${theme ? "border-[#000]" : ""} `} >
+        <div className={`grid grid-cols-[7fr_3fr] pl-[40px] border-b ${theme ? "border-[#000]" : ""} `} >
+
+            <div className={` ${theme ? "border-[#000]" : ""} border-r relative pt-[40px] pb-[200px] `} >
                 <p className='text-[28px] mb-[15px] ' >Subscribe to our newsletter for industry <br /> insights and company news!</p>
                 <span className='border-b block w-[300px] pb-[10px] mb-[15px] ' > 
                     <input className='bg-inherit text-[#b4b4b5] ' type="email" placeholder='Enter email' />
                 </span>
-                <span className='flex gap-2' > 
+
+                <span className='flex gap-2 ' > 
                     <input type="checkbox"/>
                     <p className='text-[14px] text-[#b4b4b5] ' > I agree to the <span className=' underline text-[14px] text-[#b4b4b5]'> Privacy Policy </span> and give my <br /> permission to process my personal data for the purposes specified in the Privacy Policy.</p>
                 </span>
+
+ 
+                <Toggle/>
+
             </div>
 
             <div className='grid grid-cols-2 pt-[40px] pl-[30px] pb-[50px] justify-between' >
@@ -39,7 +48,7 @@ const FooterBot = () => {
         </div>
 
         <div  className='grid grid-cols-[7fr_3fr] pl-[40px]' >
-            <div className='border-r flex items-end justify-start pb-[50px] ' >
+            <div className={` border-r flex items-end justify-start pb-[50px] ${theme ? "border-[#000]" : ""} `} >
                 <img className='w-[300px] ' src={Logo} alt="" />
             </div>
 
