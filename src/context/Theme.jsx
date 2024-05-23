@@ -4,6 +4,7 @@ export const ModeContext = createContext();
 
 const ModeProvider = ({ children }) => {
   const [theme, setTheme] = useState(true);
+  
 
   const ChangeMode = () => {
     setTheme((prevMode) => !prevMode);
