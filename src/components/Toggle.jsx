@@ -3,9 +3,9 @@ import "./Toggle.css";
 import { ModeContext } from "../context/Theme";
 
 
-const Toggle = () => {
+const Toggle = ({ fromApp }) => {
 
-    const { ChangeMode} = useContext(ModeContext)
+    const { ChangeMode, theme} = useContext(ModeContext)
 
     const handleChecked = () => {
         ChangeMode()
@@ -15,6 +15,7 @@ const Toggle = () => {
         <div className=" absolute top-[80%] left-4 ">
             <div className="toggle">
                 <input
+                    className={ theme ? "switched" : ""}
                     type="checkbox"
                     value=""
                     onChange={handleChecked}

@@ -18,6 +18,10 @@ export default function ControlledAccordions() {
         setExpanded(isExpanded ? panel : false);
     };
 
+    const handleMouseEnter = (panel) => () => {
+        setExpanded(panel);
+    };
+
     const accordionStyle = theme ? { backgroundColor: '#29292b', color: 'white' } : { backgroundColor: 'white', color: 'black' };
     const textStyle = theme ? { color: 'white' } : { color: 'black' };
     const iconStyle = theme ? { color: 'white' } : { color: '#004051' };
@@ -35,6 +39,7 @@ export default function ControlledAccordions() {
                     aria-controls="panel1bh-content"
                     id="panel1bh-header"
                     style={accordionStyle}
+                    onMouseEnter={handleMouseEnter("panel1")}
                 >
                     <Typography className="w-full grid grid-cols-2 items-center px-[40px]" style={accordionStyle}>
                         <Typography style={textStyle}> 
@@ -77,6 +82,7 @@ export default function ControlledAccordions() {
                     aria-controls="panel2bh-content"
                     id="panel2bh-header"
                     style={accordionStyle}
+                    onMouseEnter={handleMouseEnter("panel2")}
                 >
                     <Typography className="w-full grid grid-cols-2 items-center px-[40px]" style={accordionStyle}>
                         <Typography style={textStyle}> 
@@ -119,6 +125,7 @@ export default function ControlledAccordions() {
                     aria-controls="panel3bh-content"
                     id="panel3bh-header"
                     style={accordionStyle}
+                    onMouseEnter={handleMouseEnter("panel3")}
                 >
                     <Typography className="w-full grid grid-cols-2 items-center px-[40px]" style={accordionStyle}>
                         <Typography style={textStyle}> 
@@ -161,6 +168,7 @@ export default function ControlledAccordions() {
                     aria-controls="panel4bh-content"
                     id="panel4bh-header"
                     style={accordionStyle}
+                    onMouseEnter={handleMouseEnter("panel4")}
                 >
                     <Typography className="w-full grid grid-cols-2 items-center px-[40px]" style={accordionStyle}>
                         <Typography style={textStyle}> 
@@ -203,6 +211,7 @@ export default function ControlledAccordions() {
                     aria-controls="panel5bh-content"
                     id="panel5bh-header"
                     style={accordionStyle}
+                    onMouseEnter={handleMouseEnter("panel5")}
                 >
                     <Typography className="w-full grid grid-cols-2 items-center px-[40px]" style={accordionStyle}>
                         <Typography style={textStyle}> 

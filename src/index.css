@@ -24,3 +24,10 @@
    transition: all .5s ease-in-out;
 }
 
+.ourWork {
+  background-image: url(./assets/image3.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+

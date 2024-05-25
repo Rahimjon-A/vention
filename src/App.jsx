@@ -13,6 +13,9 @@ import Footer from "./components/Footer";
 import FooterBot from "./components/FooterBot";
 import ModeProvider, { ModeContext } from "./context/Theme";
 import { useContext } from "react";
+import Toggle from "./components/Toggle";
+import { PiCookieLight } from "react-icons/pi";
+import Coocies from "./components/Coocies";
 
 function App() {
     return (
@@ -23,31 +26,65 @@ function App() {
 }
 
 function AppContent() {
-    const { theme } = useContext(ModeContext);
+    const { theme, showModal } = useContext(ModeContext);
 
     return (
-        <div className={` ${ theme ? " bg-[#29292b] text-white " : " bg-white text-black " } relative`}>
+        <div>
+            {/* position: fixed; z-index: 10; */}
 
-            <Header />
-            <Hero />
-            <div className=" container mx-auto pl-[100px] ">
-                <Section1 />
-                <Section2 />
-                <Marqueetion />
-                <Section3 />
-                <Section4 />
-                <Slider />
-                <Video />
-                <Marqueetion />
-                <OurWork />
-                <Footer />
+            <div className="fixed top-[82%] left-[8px] z-10">
+                <Toggle fromApp={true} />
             </div>
-            <div className={` container mx-auto pl-[100px]  ${ theme ? "bg-[#ebebed] text-black " : "bg-[#29292b] text-white" } `}>
-                <FooterBot />
+
+            <div
+                onClick={showModal}
+                className=" fixed top-[90%] left-[24px] cursor-pointer z-50 p-2 bg-[#434345] rounded-full "
+            >
+                <PiCookieLight className=" text-white text-[45px] "></PiCookieLight>
+            </div>
+
+            <div className="fixed top-[90%] left-[24px] z-50">
+                <Coocies />
+            </div>
+
+            {/* position: relative */}
+
+            <div
+                className={` ${
+                    theme
+                        ? " bg-[#29292b] text-white "
+                        : " bg-white text-black "
+                } relative`}
+            >
+                <Header />
+                <Hero />
+                <div className=" container mx-auto pl-[100px] ">
+                    <Section1 />
+                    <Section2 />
+                    <Marqueetion />
+                    <Section3 />
+                    <Section4 />
+                    <Slider />
+                    <Video />
+                    <Marqueetion />
+                    <OurWork />
+                    <Footer />
+                </div>
+            </div>
+            <div
+                style={{ position: "relative", zIndex: 20 }}
+                className={`container mx-auto pl-[100px]  ${
+                    theme
+                        ? "bg-[#ebebed] text-black "
+                        : "bg-[#29292b] text-white"
+                } `}
+            >
+                <div style={{ position: "relative", zIndex: 2 }}>
+                    <FooterBot />
+                </div>
             </div>
         </div>
     );
 }
 
 export default App;
-

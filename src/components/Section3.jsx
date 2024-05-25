@@ -1,13 +1,24 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
+import { ModeContext } from "../context/Theme";
 
 const Section3 = () => {
     const [staff, setStaff] = useState(1);
+    const { theme} = useContext(ModeContext)
 
     return (
         <div className="border-l  ">
-            <div className="grid grid-cols-2 pl-[30px] py-[30px] border-b ">
-                <p></p>
-                <p className=" text-[50px] font-semibold ">How we work</p>
+            <div className=" ourWork   pl-[30px] border-b ">
+                <div className=" grid grid-cols-2 " >
+                    <p></p>
+                    <p className={` text-[50px] font-semibold pl-[30px] pt-[200px] pb-[50px] ${ theme ? "bg-[#29292b] " : "bg-white" } `}>How we work</p>
+                </div>
+
+                <div className="grid grid-cols-2" >
+                        <div className=" flex justify-end overflow-hidden " >
+                            <div className={` h-[200px] skew-x-[-45deg] mr-[-100px] w-[300px] ${ theme ? "bg-[#29292b] " : "bg-white" }  `}></div>
+                        </div>
+                        <div></div>
+                </div>
             </div>
 
             <div
